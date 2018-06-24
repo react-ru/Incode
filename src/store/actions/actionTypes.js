@@ -1,0 +1,2 @@
+export const SHOW_CLIENT_LIST = 'SHOW_CLIENT_LIST';
+export const SHOW_CLIENT_ITEM = 'SHOW_CLIENT_ITEM';
