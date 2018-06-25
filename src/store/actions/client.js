@@ -1,5 +1,15 @@
 import * as actionTypes from './actionTypes';
 
+export const fetchClientList = () => {
+  return dispatch => {
+    dispatch(() => {
+      return {
+        type: actionTypes.FETCH_CLIENT_LIST
+      }
+    });
+  };
+};
+
 export const showClientList = (value) => {
   return dispatch => {
       dispatch((value) => {

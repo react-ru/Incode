@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 
 class Clients extends Component {
+  componentDidMount () {
+    this.props.fetchClientList();
+  }
+
   render () {
-    return <div>Clints</div>;
+    return <div>Clients</div>;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    clients: state.client.clientList,
-    client: state.client.clientItem
+    clients: state.clientList,
+    client: state.clientItem
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchClientList:() => dispatch(actions.fetchClientList()),
     showClientList:(value) => dispatch(actions.showClientList(value)),
     showClientItem:(item) => dispatch(actions.showClientItem(item))
   };
