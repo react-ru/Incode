@@ -2,7 +2,8 @@
   display: flex;
 }
 
-.client_list {
+.client_bar {
   width: 250px;
   overflow-y: scroll;
+  height: 100vh;
 }

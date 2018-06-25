@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Client from '../../components/Client/Client';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import './Clients.css';
 
 class Clients extends Component {
@@ -22,10 +23,12 @@ class Clients extends Component {
 
     return (
      <div className='clients_page'>
-     <div className='client_list'>
-      {clients}
-     </div>
-      
+      <div className='client_bar'>
+        <SearchBar />
+        <div>
+          {clients}
+        </div>
+      </div>
      </div>
     );
   }
