@@ -1,0 +1,39 @@
+.client_detail_avatar {
+  width: 128px;
+  height: 128px;
+  float: left;
+  margin-right: 20px;
+}
+
+.client_detail_header {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.client_detail_fullname {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.client_detail_job {
+  font-size: 20px;
+}
+
+.client_detail_page {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.clear_fix {
+  clear: both;
+}
+
+.client_detail_constact {
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+}
+
+.client_detail_address {
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+}

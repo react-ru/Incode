@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Client from '../../components/Client/Client';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import ClientDetail from '../../components/ClientDetail/ClientDetail';
 import './Clients.css';
 
 class Clients extends Component {
@@ -18,8 +19,27 @@ class Clients extends Component {
         firstName={item.general.firstName}
         lastName={item.general.lastName} 
         company={item.job.company} 
-        title={item.job.title} />
+        title={item.job.title} 
+        selected={() => this.props.showClientDetail(item)}/>
     ));
+
+    let clientDetail = null;
+    if (this.props.clientDetail !== null) {
+      let item = this.props.clientDetail
+      clientDetail = 
+        <ClientDetail 
+          avatar={item.general.avatar}
+          firstName={item.general.firstName}
+          lastName={item.general.lastName} 
+          company={item.job.company} 
+          title={item.job.title} 
+          email={item.contact.email}
+          phone={item.contact.phone}
+          street={item.address.street}
+          city={item.address.city}
+          zipCode={item.address.zipCode}
+          country={item.address.country} />
+    }
 
     return (
      <div className='clients_page'>
@@ -29,6 +49,7 @@ class Clients extends Component {
           {clients}
         </div>
       </div>
+      {clientDetail}
      </div>
     );
   }
@@ -37,7 +58,7 @@ class Clients extends Component {
 const mapStateToProps = state => {
   return {
     clients: state.clientList,
-    client: state.clientItem
+    clientDetail: state.clientDetail
   }
 };
 
@@ -45,7 +66,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchClientList:() => dispatch(actions.fetchClientList()),
     showClientList:(value) => dispatch(actions.showClientList(value)),
-    showClientItem:(item) => dispatch(actions.showClientItem(item))
+    showClientDetail:(item) => dispatch(actions.showClientDetail(item))
   };
 };
 

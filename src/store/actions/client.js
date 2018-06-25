@@ -25,13 +25,11 @@ export const showClientList = (value) => {
   };
 };
 
-export const showClientItem = (item) => {
+export const showClientDetail = (item) => {
   return dispatch => {
-      dispatch((value) => {
-        return {
-          type: actionTypes.SHOW_CLIENT_ITEM,
-          item: item
-        }
+      dispatch({
+        type: actionTypes.SHOW_CLIENT_DETAIL,
+        item: item
       });
   };
 };

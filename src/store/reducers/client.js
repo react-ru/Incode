@@ -2,27 +2,27 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   clientList: [],
-  clientItem: null
+  clientDetail: null
 };
 
 const fetchClientList = (state, action) => {
   return ({
     ...state,
-    ...{clientList: action.items, clientItem: null} 
+    ...{clientList: action.items, clientDetail: null} 
   });
 };
 
 const showClientList = (state, action) => {
   return ({
     ...state,
-    ...{ clientList: [], clientItem: null} 
+    ...{clientList: [], clientDetail: null} 
   });
 };
 
-const showClientItem = (state, action) => {
+const showClientDetail = (state, action) => {
   return ({
     ...state,
-    ...{ clientList: [], clientItem: null} 
+    ...{clientDetail: action.item} 
   });
 };
 
@@ -30,7 +30,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_CLIENT_LIST: return fetchClientList(state, action);
     case actionTypes.SHOW_CLIENT_LIST: return showClientList(state, action);
-    case actionTypes.SHOW_CLIENT_ITEM: return showClientItem(state, action);
+    case actionTypes.SHOW_CLIENT_DETAIL: return showClientDetail(state, action);
     default: return state;
   }
 };

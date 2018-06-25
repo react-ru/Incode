@@ -1,5 +1,5 @@
 export {
   fetchClientList,
   showClientList,
-  showClientItem
+  showClientDetail
 } from './client';
