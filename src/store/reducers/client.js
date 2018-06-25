@@ -1,14 +1,14 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-  clientList: {},
+  clientList: [],
   clientItem: null
 };
 
 const fetchClientList = (state, action) => {
   return ({
     ...state,
-    ...{ clientList: [], clientItem: null} 
+    ...{clientList: action.items, clientItem: null} 
   });
 };
 

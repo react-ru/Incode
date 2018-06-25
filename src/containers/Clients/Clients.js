@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
+import Client from '../../components/Client/Client';
+import './Clients.css';
 
 class Clients extends Component {
   componentDidMount () {
@@ -8,7 +10,24 @@ class Clients extends Component {
   }
 
   render () {
-    return <div>Clients</div>;
+    let clients = this.props.clients.map((item, index) => (
+      <Client
+        key={index}
+        avatar={item.general.avatar}
+        firstName={item.general.firstName}
+        lastName={item.general.lastName} 
+        company={item.job.company} 
+        title={item.job.title} />
+    ));
+
+    return (
+     <div className='clients_page'>
+     <div className='client_list'>
+      {clients}
+     </div>
+      
+     </div>
+    );
   }
 }
 

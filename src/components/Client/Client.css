@@ -1,0 +1,21 @@
+.client {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.client_name {
+  margin: 0 15px;
+}
+
+.client_job {
+  margin: 5px 15px;
+  font-size: 13px;
+}
