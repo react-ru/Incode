@@ -5,6 +5,8 @@ import Client from '../../components/Client/Client';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import ClientDetail from '../../components/ClientDetail/ClientDetail';
 import './Clients.css';
+import { clientsSelector } from '../../reselects/clients';
+
 
 export class Clients extends Component {
   componentDidMount () {
@@ -57,7 +59,7 @@ export class Clients extends Component {
 
 const mapStateToProps = state => {
   return {
-    clients: state.clientList,
+    clients: clientsSelector(state),
     clientDetail: state.clientDetail
   }
 };
