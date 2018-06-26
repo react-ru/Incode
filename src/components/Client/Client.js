@@ -7,13 +7,12 @@ class Client extends Component {
       <div className='client' onClick={this.props.selected}>
         <img className='client_avatar' src={this.props.avatar} alt=''/>
         <div>
-          <div className='client_name'>{this.props.firstName} {this.props.lastName}</div>
+          <div>{this.props.firstName} {this.props.lastName}</div>
           <div className='client_job'>{this.props.company} -- {this.props.title}</div>
         </div>
       </div>
     );
   }
 }
-
 
 export default Client;

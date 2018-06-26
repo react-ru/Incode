@@ -48,7 +48,6 @@ const filterClients = (item, value) => {
 
     for(let k = 0; k < newObj.length; k++) {
       if (isLettersInWord(newObj[k], value)) {
-        console.log(newObj[k]);
         return true;
       }
     }
@@ -59,6 +58,6 @@ const filterClients = (item, value) => {
 const isLettersInWord = (str, value) => {
   let newStr = str.toUpperCase();
   let newValue = value.toUpperCase();
-  let n = newStr.toUpperCase().indexOf(newValue.toUpperCase());
-  return n === 0 ? true : false
+  let result = newStr.toUpperCase().indexOf(newValue.toUpperCase());
+  return result === 0 ? true : false
 }

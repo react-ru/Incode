@@ -6,7 +6,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import ClientDetail from '../../components/ClientDetail/ClientDetail';
 import './Clients.css';
 
-class Clients extends Component {
+export class Clients extends Component {
   componentDidMount () {
     this.props.fetchClientList();
   }
