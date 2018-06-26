@@ -25,7 +25,7 @@ class Clients extends Component {
 
     let clientDetail = null;
     if (this.props.clientDetail !== null) {
-      let item = this.props.clientDetail
+      let item = this.props.clientDetail;
       clientDetail = 
         <ClientDetail 
           avatar={item.general.avatar}
@@ -44,7 +44,7 @@ class Clients extends Component {
     return (
      <div className='clients_page'>
       <div className='client_bar'>
-        <SearchBar />
+        <SearchBar search={(e) => this.props.showClientList(e.target.value)} />
         <div>
           {clients}
         </div>

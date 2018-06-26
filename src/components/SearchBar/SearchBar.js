@@ -5,7 +5,7 @@ class SearchBar extends Component {
   render () {
     return (
       <div >
-        <input className='search_input'/>
+        <input className='search_input' onChange={this.props.search} />
         <div className='search_bottom_line'></div>
       </div>
     );

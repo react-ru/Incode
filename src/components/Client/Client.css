@@ -5,8 +5,9 @@
   border-bottom: 1px solid lightgray;
 }
 
-div img.client_avatar {
+.client_avatar {
   width: 60px;
+  flex-grow: 1;
   height: 60px;
   border-radius: 50%;
 }

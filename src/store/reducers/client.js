@@ -13,9 +13,10 @@ const fetchClientList = (state, action) => {
 };
 
 const showClientList = (state, action) => {
+  let newClients = action.clientsData.filter(item => filterClients(item, action.value));
   return ({
     ...state,
-    ...{clientList: [], clientDetail: null} 
+    ...{clientList: newClients} 
   });
 };
 
@@ -36,3 +37,28 @@ const reducer = (state = initialState, action) => {
 };
 
 export default reducer;
+
+
+
+const filterClients = (item, value) => {
+  let obj = Object.values(item);
+
+  for (let i = 0; i < obj.length; i++) {
+    let newObj = Object.values(obj[i]);
+
+    for(let k = 0; k < newObj.length; k++) {
+      if (isLettersInWord(newObj[k], value)) {
+        console.log(newObj[k]);
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+const isLettersInWord = (str, value) => {
+  let newStr = str.toUpperCase();
+  let newValue = value.toUpperCase();
+  let n = newStr.toUpperCase().indexOf(newValue.toUpperCase());
+  return n === 0 ? true : false
+}

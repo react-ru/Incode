@@ -16,12 +16,12 @@ export const clients = (data) => {
 
 export const showClientList = (value) => {
   return dispatch => {
-      dispatch((value) => {
-        return {
-          type: actionTypes.SHOW_CLIENT_LIST,
-          value: value
-        }
-      });
+    dispatch({
+        type: actionTypes.SHOW_CLIENT_LIST,
+        clientsData: clientsData,
+        value: value
+      }
+    );
   };
 };
 
